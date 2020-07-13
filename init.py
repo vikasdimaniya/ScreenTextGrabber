@@ -4,12 +4,13 @@ import numpy as np
 import pyautogui  
 import pytesseract
 from PIL import Image
+import time
 # from tkinter import *
 # import tkinter as tk
 
 #SETTINGS-----
 CHARACTER_BASED = False;
-
+time.sleep(1);
 #INPUT IMAGE-----
 # img = cv2.imread("test2.png")
 img = pyautogui.screenshot()
@@ -30,7 +31,7 @@ original_img = img;
 # img = cv2.resize(img,None, fx=0.5, fy=0.5)
 # img = cv2.cvtColor(np.array(img), cv2.COLOR_BGR2GRAY)
 # img = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY,9,1)
-
+# img = cv2.Canny(img,600,600)
 #Tesseract call-----
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 # text=pytesseract.image_to_string(img,lang="eng")

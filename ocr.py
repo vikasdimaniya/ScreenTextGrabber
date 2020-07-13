@@ -1,1 +1,1 @@
-//this file will contain all functions related to OCR
+# this file will contain all functions related to OCR

@@ -4,5 +4,8 @@ It uses Tesseract and opencv.
 
 **_Setup:_**  
 install python 3.7
-pip3 install pytesseract opencv-python pyautogui numpy
+pip3 install pytesseract opencv-python pyautogui numpy  
 python init.py
+
+**_Thoughts:_**  
+Dividing image in muliple sections and increasing there resolution and maybe little blur might increase accuracy.
