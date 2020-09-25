@@ -12,6 +12,7 @@ IR = ImageTextReader()
 # SETTINGS-----
 # This means the OCR will search true->char by char, false->word by word
 CHARACTER_BASED = False
+scale = 8
 # time.sleep(7)
 # INPUT IMAGE-----
 # img = cv2.imread("test2.png")
@@ -30,7 +31,7 @@ hImg, wImg, _ = img.shape
 original_img = img
 
 # IMAGE FILTERING-----
-img = cv2.resize(img, None, fx=2, fy=2)
+img = cv2.resize(img, None, fx=scale, fy=scale)
 img = cv2.cvtColor(np.array(img), cv2.COLOR_BGR2GRAY)
 # img = cv2.adaptiveThreshold(
 #    img, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 9, 1)
@@ -40,9 +41,10 @@ img = cv2.cvtColor(np.array(img), cv2.COLOR_BGR2GRAY)
 # text=pytesseract.image_to_string(img,lang="eng")
 # print(text)
 if CHARACTER_BASED:
-    original_img = IR.char_based(img)
+    original_img = IR.char_based(img, scale)
 else:
-    original_img = IR.word_based(img)
+    original_img = IR.word_based(img, scale)
+
 
 # DISPLAY IMAGE-----
 cv2.imshow("Img", original_img)
